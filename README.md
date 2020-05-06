@@ -3,6 +3,8 @@ OOP, Inheritance, decorators, static methods
 
 
 ## Code Review Cheat Sheet
+* Use `pylint` to standardize code format.
+
 **Questions to Ask Yourself When Conducting a Code Review**
 
 **Is the code clean and modular?**
@@ -35,3 +37,5 @@ OOP, Inheritance, decorators, static methods
 * Are log messages clear, concise, and professional?
 * Do they include all relevant and useful information?
 * Do they use the appropriate logging level?
+
+
