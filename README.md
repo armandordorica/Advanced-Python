@@ -2,10 +2,8 @@
 OOP, Inheritance, decorators, static methods
 
 
-### Tips on Code-Review 
+## Code Review Cheat Sheet
 **Questions to Ask Yourself When Conducting a Code Review**
-
-First, let's look over some of the questions we may ask ourselves while reviewing code. These are simply from the concepts we've covered in these last two lessons!
 
 **Is the code clean and modular?**
 * Can I understand the code easily?
