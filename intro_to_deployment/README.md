@@ -20,6 +20,10 @@
   1. Deployment
       * Make your model available for use by web or software application. 
   2. Monitor and update model and data
+  
+  
+### Prod environment schematic 
+
 
 * What's the machine learning workflow?
 
