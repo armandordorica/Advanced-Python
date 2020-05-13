@@ -23,6 +23,7 @@
   
   
 ### Prod environment schematic 
+![](https://github.com/armandordorica/Advanced-Python/blob/master/intro_to_deployment/machine_learning_workflow.png?raw=true)
 
 
 * What's the machine learning workflow?
