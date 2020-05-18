@@ -61,8 +61,25 @@
 
    
 
+### Model, Application and Containers 
+Production environment is mainly compoed of two programs: **model** and **application** that communicate with each other through the **endpoint** (interface). 
+
+Th model and the application require a computing environment so that they can be run and be available for use. 
+* **Containers** allow to create and maintain these computing environmnets. Containers are created with a script that specifies which software packages, libraries, and other computer attributes are necessary to run the software application, in our case either the **model** or the **application**. 
+* The structure of a **Docker container** enables to create, save, use and delete a set of common tools. 
 
 
+**Container Structure**
+* Computational infrastructure - cloud, on-prem server, local computer. 
+* Operating System
+* Container Engine - Docker software running on the computer that enables to create, save, use, and delete containers. 
+
+**Architecture of containers provides the following advantages:**
+
+* Isolates applciation --> Increased security. 
+* Only software to run the application is required --> More efficient use of resources and faster application deployment.
+* Makes application creation, replication, deletion, and maintenance easier and consistent across applications that are deployed using containers. 
+* Simpler and more secure way to replicate, save, and share containers. 
 
 * What's the machine learning workflow?
 
