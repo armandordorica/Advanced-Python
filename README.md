@@ -49,4 +49,36 @@ def truth_table(n):
   return list(itertools.product([0, 1], repeat=n))
 ```
 
+<hr>
+**Named tuple - kind of a relational database**
+```
+from collections import namedtuple
+
+Student = namedtuple('Student', 'fname, lname, age')
+s1 = Student('John', 'Clarke', '13')
+print(s1.fname)
+```
+
+Output: 
+```
+Student(fname='John', lname='Clarke', age='13')
+```
+
+<hr>
+
+**Stack and queue**
+
+Stack - LIFO
+```
+from collections import deque 
+
+from collections import deque
+
+# 
+list = ["a","b","c"]
+deq = deque(list)
+deq.append('d') # deque(['a', 'b', 'c', 'd'])
+deq.pop() # 'd'
+```
+
 
