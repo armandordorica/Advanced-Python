@@ -71,6 +71,9 @@ def permutation(n, r):
 ```
 
 <hr>
+
+
+
 **Named tuple - kind of a relational database**
 ```
 from collections import namedtuple
@@ -86,6 +89,8 @@ Student(fname='John', lname='Clarke', age='13')
 ```
 
 <hr>
+
+
 
 **Stack and queue**
 
