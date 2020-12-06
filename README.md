@@ -48,6 +48,27 @@ import itertools
 def truth_table(n): 
   return list(itertools.product([0, 1], repeat=n))
 ```
+### Combinations and Permutations 
+* **Combination**: Sampling without replacement where order does not matter 
+* **Permutation**: Sampling without replacement where order does matter
+
+```python
+def factorial(n): 
+  if n==0 or n==1:
+    return 1 
+  else:
+    return n*factorial(n-1)
+
+#n is total number of items
+#r is how many you're choosing
+def combination(n, r):
+  return factorial(n)/(factorial(n-r)*factorial(r))
+
+#n is total number of items
+#r is how many you're choosing
+def permutation(n, r):
+  return factorial(n)/(factorial(n-r))
+```
 
 <hr>
 **Named tuple - kind of a relational database**
