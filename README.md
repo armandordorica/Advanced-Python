@@ -39,6 +39,34 @@ OOP, Inheritance, decorators, static methods
 * Do they use the appropriate logging level?
 
 
+<hr> 
+
+
+# Linked Lists 
+* A linked list is a chain of values connected with pointers.   
+  * An array is a sequence of fixed size. Alinked list can have its elements to be dynamically allocated. 
+* The starting node of a linked list is referred to as the header. 
+
+### Python Implementation of a Linked List 
+```python 
+class Node:
+    def __init__(self,val):
+        self.val = val
+        self.next = None # the pointer initially points to nothing
+```
+
+Once you have the Node class, you can impleent any linked list as follows: 
+
+```python 
+node1 = Node(12) 
+node2 = Node(99) 
+node3 = Node(37) 
+node1.next = node2 # 12->99
+node2.next = node3 # 99->37
+# the entire linked list now looks like: 12->99->37
+```
+
+
 ### Useful Functions 
 
 **Truth Table**
