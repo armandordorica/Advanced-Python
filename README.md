@@ -1,5 +1,46 @@
 # Trees Traversal 
 
+### Level-Order Binary Tree traversal (Breadth-first searh, BFS)
+```python 
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+        
+class Solution:
+    def levelOrder(self, root: TreeNode) -> List[List[int]]:
+        result = []
+        
+        if root is None: 
+            return result 
+        
+        q = []
+        
+        q.append(root)
+        
+        while len(q)>0: 
+            size = len(q)
+            current_level = []
+            
+            for i in range(0, len(q)): 
+                current_node = q.pop(0)
+                current_level.append(current_node.val)
+                
+                if current_node.left is not None: 
+                    q.append(current_node.left)
+
+                if current_node.right is not None:
+                    q.append(current_node.right)
+            result.append(current_level)
+            
+        return result
+  ```
+  
+  
+
 ### Pre Order Traversal 
 
 ```python
