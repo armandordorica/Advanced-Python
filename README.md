@@ -1,3 +1,154 @@
+# Useful Plot Templates 
+
+### Probability of Fraud given the Fraud Score based on historical data
+```python
+import seaborn as sns
+sns.set_theme()
+
+plt.figure(figsize=(20,10))
+plt.plot(scores_list, fraud_rates1_list, label='Confirmed Fraud')
+plt.plot(possible_scores_list_neg, fraud_rates0_list, label='Non Confirmed Fraud')
+plt.ylabel("Conditional Probability of Fraud given the Fraud Score")
+plt.xlabel("Predicted Fraud Risk Score")
+plt.legend()
+plt.title("Probability of Fraud given the Fraud Score based on historical data", fontsize=20)
+```
+
+### Optimal threshold for classification
+```pyton 
+from sklearn.metrics import f1_score
+
+possible_thresholds = np.arange(0, 1, 0.01)
+
+f1_scores = []
+for i in range(0, len(possible_thresholds)): 
+    df_pre_20191120['y_pred_binary'] = np.where(df_pre_20191120['y_pred_pre_20191120']>possible_thresholds[i], 1, 0)
+    
+    f1_scores.append(f1_score(df_pre_20191120['y_pred_binary'] , df_pre_20191120['fraud_acct']))
+
+plt.figure(figsize=(20,10))
+plt.scatter(possible_thresholds, f1_scores)
+plt.title("Finding Optimal Threshold", fontsize=20)
+plt.xlabel("Possible Threshold")
+plt.ylabel("F1 score")
+```
+
+### ROC curve 
+```python 
+# roc curve and auc
+from sklearn.datasets import make_classification
+from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import roc_curve
+from sklearn.metrics import roc_auc_score
+from matplotlib import pyplot
+# generate 2 class dataset
+X_ex, y_ex = make_classification(n_samples=1000, n_classes=2, random_state=1)
+# # split into train/test sets
+trainX, testX, trainy, testy = train_test_split(X_ex, y_ex, test_size=0.9, random_state=2)
+# # generate a no skill prediction (majority class)
+ns_probs = [0 for _ in range(len(testy))]
+ns_fpr, ns_tpr, _ = roc_curve(testy, ns_probs)
+
+# calculate AUC comparing historical output with binary output
+auc = roc_auc_score(df_pre_20191120['fraud_acct'].values,df_pre_20191120['y_pred_binary'].values)
+print('AUC: %.3f' % auc)
+
+# calculate AUC comparing historical output with regression output
+auc = roc_auc_score(df_pre_20191120['fraud_acct'].values,df_pre_20191120['y_pred_pre_20191120'].values)
+print('AUC: %.3f' % auc)
+
+rf_fpr, rf_tpr, _ = roc_curve(df_pre_20191120['fraud_acct'].values, df_pre_20191120['y_pred_pre_20191120'].values)
+rf_fpr, rf_tpr, _
+pyplot.figure(figsize=(20,10))
+pyplot.title("ROC curve", fontsize=20)
+
+pyplot.plot(ns_fpr, ns_tpr, linestyle='--', label='Coin Toss (No Skill)')
+pyplot.plot(rf_fpr, rf_tpr, marker='.', label='Random Forest ROC Curve')
+# axis labels
+pyplot.xlabel('False Positive Rate')
+pyplot.ylabel('True Positive Rate')
+# show the legend
+pyplot.legend()
+# show the plot
+pyplot.show()
+```
+
+
+### Classic bar plot 
+```python 
+plt.figure(figsize=(20,10))
+plt.bar(used_features['feature_names'], used_features['feature_importances'])
+plt.xticks(rotation=90)
+plt.title("Feature Importances", fontsize=20)
+```
+
+### Classic scatter plot 
+```python 
+import seaborn as sns
+sns.set_theme()
+
+plt.figure(figsize=(20,10))
+plt.scatter( df_pre_20191120['FinalApplicationRiskScore'],df_pre_20191120['y_pred_pre_20191120'])
+plt.xlabel("Application TU Credit Score")
+plt.ylabel("Predicted Fraud Score")
+plt.title("Predicted Fraud Score vs TU Credit Score", fontsize=20)
+```
+
+### Whisker plot (distribution plot) over time 
+```python
+import seaborn as sns
+sns.set_theme(style="whitegrid")
+
+credit_score_dist_df = query_to_df("""select substring(cast(applicationdate as varchar(12)),1,7) as yr_mth, 
+                    systemcreditscore
+                    from flxdw_rpt.dbo.applications_tu_details_deduped
+where decisionsystem = 'TU'
+""")
+
+credit_score_dist_df['systemcreditscore'] = credit_score_dist_df['systemcreditscore'].astype(float)
+
+plt.figure(figsize=(20, 6))
+
+ax = sns.boxplot(x="yr_mth", y="systemcreditscore", data=credit_score_dist_df,
+                 order=credit_score_dist_df['yr_mth'].unique())
+
+ax.set_title('Distribution of Application Credit Scores over Time ', 
+             fontsize = 20) 
+```
+
+### Plot Correlation
+```python
+ 
+def plot_fraud_rates(df, var_name): 
+    plt.figure(figsize=(20,6))
+    plt.scatter(df.index, df['fraud_rate']*100)
+    plt.title("Historical fraud accounts rates by {}".format(var_name), fontsize=20)
+    plt.xlabel(var_name)
+    plt.ylabel("Percentage (%)")
+    plt.xticks(rotation=90)
+
+def plot_correlation(df, var_name):
+    target_var = 'fraud_acct'
+    df2 = pd.get_dummies(df[[var_name, target_var]], columns=[var_name])
+    x_labels = []
+    labels = list(df2.columns[1:])
+    for i in range(0,len(labels)):
+        x_labels.append(labels[i].split('_')[-1])
+
+    df3 = df2.corrwith(df2.fraud_acct)[1:]
+    df3.index = x_labels
+
+    df3.plot.bar(
+            figsize = (20, 10), title = "Correlation with {}".format(var_name), fontsize = 15, grid = True)
+    plt.title("Correlation between {} and Fraud".format(var_name), fontsize=20)
+    plt.xlabel(var_name, fontsize=20)
+    plt.ylabel("Correlation with {}".format(target_var), fontsize=20)
+    
+plot_correlation(df, 'num_apps_same_phone')
+```
+<hr>
+
 # Trees Traversal 
 
 ### Level-Order Binary Tree traversal (Breadth-first searh, BFS)
