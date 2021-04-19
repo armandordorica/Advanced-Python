@@ -13,6 +13,7 @@ plt.xlabel("Predicted Fraud Risk Score")
 plt.legend()
 plt.title("Probability of Fraud given the Fraud Score based on historical data", fontsize=20)
 ```
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/1_proba_fraud.png?raw=true)
 
 ### Optimal threshold for classification
 ```pyton 
@@ -32,6 +33,7 @@ plt.title("Finding Optimal Threshold", fontsize=20)
 plt.xlabel("Possible Threshold")
 plt.ylabel("F1 score")
 ```
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/2_optimal_threshold.png?raw=true)
 
 ### ROC curve 
 ```python 
@@ -73,7 +75,7 @@ pyplot.legend()
 # show the plot
 pyplot.show()
 ```
-
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/3_roc_curve.png?raw=true)
 
 ### Classic bar plot 
 ```python 
@@ -82,6 +84,7 @@ plt.bar(used_features['feature_names'], used_features['feature_importances'])
 plt.xticks(rotation=90)
 plt.title("Feature Importances", fontsize=20)
 ```
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/5_classic_bar_plot.png?raw=true)
 
 ### Classic scatter plot 
 ```python 
@@ -94,6 +97,7 @@ plt.xlabel("Application TU Credit Score")
 plt.ylabel("Predicted Fraud Score")
 plt.title("Predicted Fraud Score vs TU Credit Score", fontsize=20)
 ```
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/6_classic_scatter.png?raw=true)
 
 ### Whisker plot (distribution plot) over time 
 ```python
@@ -116,6 +120,8 @@ ax = sns.boxplot(x="yr_mth", y="systemcreditscore", data=credit_score_dist_df,
 ax.set_title('Distribution of Application Credit Scores over Time ', 
              fontsize = 20) 
 ```
+
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/7_whisker_plot.png?raw=true)
 
 ### Plot Correlation
 ```python
@@ -147,6 +153,8 @@ def plot_correlation(df, var_name):
     
 plot_correlation(df, 'num_apps_same_phone')
 ```
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/corr_num_apps.png?raw=true)
+
 <hr>
 
 # Trees Traversal 
