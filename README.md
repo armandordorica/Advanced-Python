@@ -157,6 +157,41 @@ plot_correlation(df, 'num_apps_same_phone')
 
 <hr>
 
+
+# Binary Trees
+### Binary Tree List to List of Nodes
+
+Given a list of integers to represent a binary tree, return a list of TreeNode objects 
+```python 
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+        
+def int_list_to_node_list(a):
+    if len(a) <=2: 
+        num_nulls = 3-len(a)
+        nulls_list = [None]*num_nulls
+        a = a + nulls_list
+    
+    nodes = []
+    i = 0
+    while 2*i+2 < len(a):    
+        nodes.append(TreeNode(a[i], a[2*i+1], a[2*i+2]))
+        i+=1
+        
+    node_vals = [x.val for x in nodes]
+    missing_vals = [x for x in a if x not in node_vals and x is not None]
+
+    for x in missing_vals: 
+        nodes.append(TreeNode(x, None, None))
+        
+    return nodes
+
+```
+<hr>
+
 # Trees Traversal 
 
 ### Level-Order Binary Tree traversal (Breadth-first searh, BFS)
