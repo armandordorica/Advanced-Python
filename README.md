@@ -1,3 +1,29 @@
+# Dimensionality Reduction with PCA 
+
+1. Standardize your data (0 mean, unit variance)
+2. Compute the covariance matrix of the dataframe. Hint: The dimensions of your Cov matrix should be mxm where m represents the number of features.
+3. Compute eigenvalues and eigenvectors using np.linalg.eigh.
+    * As we can see, eigenvalues are just 149 but eigenvectors are 149x149 matrices (because num_features = 149 (days)).
+Eigenvectors here are the columns not the rows. For example, first column corresponds to first eigenvector.
+5. Show the effectiveness of your principal components in covering the variance of the dataset with a scree plot. How many PCs do you need to cover 99\% of the dataset's variance?
+    * An eigenvalue is a number, telling you how much variance there is in the data in that direction, in the example above the eigenvalue is a number telling us how spread out the data is on the line. The eigenvector with the highest eigenvalue is therefore the principal component.
+ The first three eigenvectors are able to explain 99.21% of the variance.
+```python
+args = (-eigenValues).argsort()
+eigenValues = eigenValues[args]
+eigenVectors = eigenVectors[:, args]
+
+
+eigValSum = sum(eigenValues)
+expVar = [eigV/eigValSum*100 for eigV in eigenValues]
+cumExpVar = np.cumsum(expVar)
+cumExpVar
+```
+
+7. Show the first 10 principal components (Eigenvectors) plotted as a time series.
+8. Based on your knowledge of the dataset contents, can you explain what any of the principal components might represent?
+https://github.com/armandordorica/APS1070_Project3_PCA/blob/master/Project_3_(1).ipynb
+
 # Useful Plot Templates 
 
 ### Probability of Fraud given the Fraud Score based on historical data
