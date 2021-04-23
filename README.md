@@ -61,6 +61,27 @@ plt.ylabel("F1 score")
 ```
 ![](https://github.com/armandordorica/Advanced-Python/blob/master/images/2_optimal_threshold.png?raw=true)
 
+### Dist Plot 
+```python 
+import seaborn as sns
+from scipy.stats import norm
+
+sns.set_theme();
+
+temp_df = df[df['fraud_category']!='other']
+fraud_categories = temp_df['fraud_category'].unique()
+
+i=0
+
+plt.figure(figsize=(20,10))
+for i in range(0, len(fraud_categories)): 
+    temp_df2 = temp_df[temp_df['fraud_category']==fraud_categories[i]]
+    sns.distplot(temp_df2['systemcreditlimit'], label=fraud_categories[i])
+
+plt.legend(title='Status Reason')
+plt.title("Probability Density by Status Reason for 'Fraud' accounts by Credit Limit Assigned", fontsize=20)
+```
+
 ### ROC curve 
 ```python 
 # roc curve and auc
