@@ -62,6 +62,7 @@ plt.ylabel("F1 score")
 ![](https://github.com/armandordorica/Advanced-Python/blob/master/images/2_optimal_threshold.png?raw=true)
 
 ### Dist Plot 
+
 ```python 
 import seaborn as sns
 from scipy.stats import norm
@@ -81,6 +82,8 @@ for i in range(0, len(fraud_categories)):
 plt.legend(title='Status Reason')
 plt.title("Probability Density by Status Reason for 'Fraud' accounts by Credit Limit Assigned", fontsize=20)
 ```
+
+![](https://user-images.githubusercontent.com/14205978/115934477-153b7a80-a45f-11eb-907f-793a1c79a661.png)
 
 ### ROC curve 
 ```python 
