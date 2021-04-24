@@ -1,3 +1,22 @@
+# Training a Classifier 
+### Approach
+1. Define a model 
+2. Define a cost function
+3. Minimize the cost using gradient descent 
+
+Classification error and squared error are problematic cost functions for classification. 
+
+# Gaussian Processes 
+For a Gaussian radom process, WSS implies SSS since the process is completely specified by its mean and autocorrelation functions. 
+
+### Autocorrelation 
+The autocorrelation function of a Gaussian process is the delta function. 
+A process is Wide Sense Stationary if its mean and autocorrelation functions are time inveriant. 
+   * $E(X(t)) = \mu$
+   * $R_X(t_1, t_2)$ is a function only of the time difference $t_2 - t_1$
+   * 
+
+
 # Dimensionality Reduction with PCA 
 
 1. Standardize your data (0 mean, unit variance)
