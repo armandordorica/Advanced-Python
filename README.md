@@ -1,3 +1,77 @@
+# Previous Projects 
+**APS 1070**
+* Project 1 
+  * Vectorized coding (as opposed to for loops)
+  * Data Standardization (always standardize on training set and use same scaler for testing set)
+    * Effects of data standardization on accuracy by number of neighbours (for KNN specifically)
+  * KNN classification 
+  * Cross validation 
+  * Recursive Feature Selection using Random Forests 
+
+* Project 2 - Anomaly Detection 
+  * Gaussian Mixture Models 
+    * Fitting Gaussians to a distribution
+  * Naive Bayes
+    * Pairplots 
+
+* Project 3 - Principal Component Analysis to COVID-19 dataset (number of total cases fo different countries at the end of each day)
+  * How to obtain principal components based on covariance matrix, eigenvalues, and eigenvectors. 
+  * Scree plots - Line plot of the eigenvalues of factors or principal components in an analysis. 
+  * Data reconstruction (compression)
+  * ARIMA 
+    * Out of sample timeseries forecasts with ARIMA 
+
+* Project 4 - Linear Regression with Gradient Descent 
+  * Linear Regression - direct solution
+  * Gradient Descent
+  * Mini-batch Gradient Descent
+  * Regularizers 
+  * Momentum 
+  * Jointplots 
+
+**MIE1516 - Probabilistic Graphical Models and Deep Learning **
+
+* Project 1 - Bayesian Networks and Markov Random Fields
+  * Variable elimination 
+
+* Project 2 - Monte Carlo Methods 
+  * Monte-Carlo simulations 
+  * Gibbs Sampling 
+
+* Project 3 - Neural Networks
+  * Implement your own PyTorch
+
+* Project 4 - Convolutional Networks 
+  * LSTM 
+  * Recurrent Neural Networks 
+  * CNNs with pretrained word embeddings 
+  * Multinomial Naive Bayes with TF-IDF feature selection
+  * Bidirectional LSTM RNN 
+
+* Final Project
+  * Twitter sentiment analysis 
+    * ARIMA 
+    * Sentiment analysis
+    * Linear Regression
+    * Twitter API
+
+
+**ECE 1513 - Machine Learning**
+* Project 3
+  * Multilayer perceptron using backpropagation
+
+* Project 4 
+  * Convolutional Neural Networks on CIFAR and MNIST data 
+  * Architecture of Convolutional Networks 
+  * Activation functions (sigmoid, relu, tanh, etc)
+
+* Project 5 - Adversarial Networks (GANs)
+  * Image Classification of MNIST data 
+  * Self generate many more images to get better at training (data augmentation)
+
+* Project 6 - Gated Recurrent Units (LSTM with a forget gate) on Ornstein-Uhlenbeck process
+<hr>
+
 # Training a Classifier 
 ### Approach
 1. Define a model 
