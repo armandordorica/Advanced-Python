@@ -29,7 +29,9 @@
   * Momentum 
   * Jointplots 
 
-**MIE1516 - Probabilistic Graphical Models and Deep Learning **
+
+
+**MIE1516 - Probabilistic Graphical Models and Deep Learning**
 
 * Project 1 - Bayesian Networks and Markov Random Fields
   * Variable elimination 
