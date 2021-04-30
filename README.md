@@ -156,6 +156,29 @@ plt.ylabel("F1 score")
 ```
 ![](https://github.com/armandordorica/Advanced-Python/blob/master/images/2_optimal_threshold.png?raw=true)
 
+
+### Comparison Bar Plot 
+```
+X = list(provinces_summary_df['Province/State'])
+general_pct = provinces_summary_df['pop_pct_x']
+bad_pop_pct = provinces_summary_df['pop_pct_y']
+  
+X_axis = np.arange(len(X)) 
+  
+plt.figure(figsize=(20,10))
+plt.bar(X_axis - 0.2, general_pct, 0.4, label = 'General Population Distribution') 
+plt.bar(X_axis + 0.2, bad_pop_pct, 0.4, label = 'Bad Population Distribution') 
+  
+plt.xticks(X_axis, X) 
+plt.xlabel("Provinces") 
+plt.ylabel("% of the Population") 
+plt.title("Comparison of distributions across provinces general pop vs bad pop", fontsize=20) 
+plt.legend() 
+plt.show() 
+```
+
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/bar_plot_side_by_side.png)
+
 ### Dist Plot 
 
 ```python 
