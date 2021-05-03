@@ -595,3 +595,11 @@ deq.pop() # 'd'
 ```
 
 
+### Example of `zip` applied to calculating dot product 
+```python
+def dot_product(x,y): 
+    z = list(zip(x,y))
+    return sum([i[0]*i[1] for i in z])
+```
+
+
