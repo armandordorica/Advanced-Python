@@ -362,6 +362,20 @@ def int_list_to_node_list(a):
 
 # Trees Traversal 
 
+### Find a Tree's Maximum Depth (Binary tree case) 
+* The depth of each root node is 1
+* For each know, if we know its depth, we know the depth of its children. Therefore, if we pass the depth of a node as a parameter when calling the function recursively, all nodes will know their depth. 
+ * For the leaf nodes, we can use the depth to update the final answer. 
+
+#### Pseudocode for Recursive Function `maximum_depth(root, depth)`: 
+```
+1. return if root is null 
+2. If root is a leaf node: 
+3.  answer = max(answer, depth) // update answer if needed 
+4. maximum_depth(root.left, depth+1) //call function recursively for left child 
+5. maimum_depth(root.right, depth+1) //call function recursively for right child
+```
+
 ### Level-Order Binary Tree traversal (Breadth-first searh, BFS)
 ```python 
 # Definition for a binary tree node.
