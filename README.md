@@ -325,6 +325,22 @@ plot_correlation(df, 'num_apps_same_phone')
 
 <hr>
 
+### See if two objects are equal
+* The `is` keyword is used to test if two variables refer to the same object.
+* The test returns True if the two objects are the same object.
+* The test returns False if they are not the same object, even if the two objects are 100% equal.
+* Use the == operator to test if two variables are equal.
+
+```python
+x = ["apple", "banana", "cherry"]
+
+y = ["apple", "banana", "cherry"]
+
+print(x is y) //--> False
+
+print(x ==y) //--> True
+``` 
+
 
 # Binary Trees
 ### Binary Tree List to List of Nodes
