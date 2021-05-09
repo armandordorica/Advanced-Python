@@ -440,19 +440,30 @@ class Solution:
             return True #null tree reflected upon itself is symmetric
         
         if root.left is None or root.right is None: 
-            return root.left == root.right
+            if (root.left is None and root.right is not None) or (root.right is None and root.left is not None): 
+                return False  # only one of the two is None 
+            # return root.left == root.right
+            return True #both being None 
         
         return self.isMirror(root.left, root.right)
     
-    
     def isMirror(self, left, right):
-
-        if left and right: ## If they are not empty 
-            if left.val == right.val: 
+        if left is not None and right is not None: ## If they are both not empty 
+            if left.val == right.val: #The roots of the subtrees must be equal 
                 if self.isMirror(left.right,right.left) and self.isMirror(left.left, right.right): 
                     return True 
-
-        return left == right
+        
+        #If up to one of the two is None
+        # return left == right
+        
+        # If they are both None
+        if left == right: 
+            return True 
+        
+        # If only one of them is None 
+        if left != right: 
+            return False
+        # return False
 ```
 
 ### Level-Order Binary Tree traversal (Breadth-first searh, BFS)
