@@ -405,6 +405,40 @@ class Solution:
         return (1 + max(self.maxDepth(root.left), self.maxDepth(root.right)))
 ```
 
+### Check if a tree is symmetric 
+```python 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+
+    
+    
+class Solution:
+    def isSymmetric(self, root: TreeNode) -> bool:
+        
+        if root is None: 
+            return True #null tree reflected upon itself is symmetric
+        
+        if root.left is None or root.right is None: 
+            return root.left == root.right
+        
+        return self.isMirror(root.left, root.right)
+    
+    
+    def isMirror(self, left, right):
+
+        if left and right: ## If they are not empty 
+            if left.val == right.val: 
+                if self.isMirror(left.right,right.left) and self.isMirror(left.left, right.right): 
+                    return True 
+
+        return left == right
+```
+
 ### Level-Order Binary Tree traversal (Breadth-first searh, BFS)
 ```python 
 # Definition for a binary tree node.
