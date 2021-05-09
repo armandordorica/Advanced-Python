@@ -559,6 +559,31 @@ class Solution:
         return self.postorderTraversal(root.left) + self.postorderTraversal(root.right) +[root.val]
 ```        
 
+### Path Sum 
+
+Given the root of a binary tree and an integer targetSum, return true if the tree has a root-to-leaf path such that adding up all the values along the path equals targetSum.
+
+A leaf is a node with no children.
+```python 
+# Definition for a binary tree node.
+# class TreeNode:
+#     def __init__(self, val=0, left=None, right=None):
+#         self.val = val
+#         self.left = left
+#         self.right = right
+
+class Solution: 
+    
+    def hasPathSum(self, root: TreeNode, targetSum: int) -> bool:
+        if root is None: 
+            return False 
+        ## if your Node is a leaf and the sum of the values are already 0 
+        elif (root.left is None and root.right is None and targetSum - root.val ==0): 
+            return True 
+        else: 
+            # check if you can accomplish this from either left or right children
+            return self.hasPathSum(root.left, targetSum - root.val) or self.hasPathSum(root.right, targetSum - root.val) 
+```
 
 <hr>
 # Advanced-Python
