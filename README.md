@@ -139,6 +139,31 @@ plt.title("Probability of Fraud given the Fraud Score based on historical data",
 ```
 ![](https://github.com/armandordorica/Advanced-Python/blob/master/images/1_proba_fraud.png?raw=true)
 
+
+### Annotated Scatterplot 
+Summary_df looks like this: 
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/summary_df.png?raw=true)
+
+```
+x = summary_df['fraud_corr']
+y = summary_df['fraud_rate']
+
+fig, ax = plt.subplots(figsize=(20,10))
+ax.scatter(x,y)
+labels = summary_df.index
+
+for i, txt in enumerate(labels):
+    ax.annotate(txt, (x[i], y[i]), fontsize=8)
+    
+ax.set_title("Correlation of Intellicheck Scanning Rates to Fraud Rates by Merchant", fontsize=20)
+ax.set_xlabel("Fraud Correlation")
+ax.set_ylabel("Fraud Rate")
+```
+
+which yields the following plot: 
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/annotated_scatter_plot.png?raw=true)
+
+
 ### Optimal threshold for classification
 ```pyton 
 from sklearn.metrics import f1_score
