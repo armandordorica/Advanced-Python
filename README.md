@@ -231,6 +231,15 @@ plt.title("Probability Density by Status Reason for 'Fraud' accounts by Credit L
 
 ![](https://user-images.githubusercontent.com/14205978/115934477-153b7a80-a45f-11eb-907f-793a1c79a661.png)
 
+
+
+### Random Forests Validation 
+In random forests, there is no need for cross-validation or a separate test set to get an unbiased estimate of the test set error. It is estimated internally, during the run, as follows:
+
+Each tree is constructed using a different bootstrap sample from the original data. About one-third of the cases are left out of the bootstrap sample and not used in the construction of the kth tree.
+
+Put each case left out in the construction of the kth tree down the kth tree to get a classification. In this way, a test set classification is obtained for each case in about one-third of the trees. At the end of the run, take j to be the class that got most of the votes every time case n was oob. The proportion of times that j is not equal to the true class of n averaged over all cases is the oob error estimate. This has proven to be unbiased in many tests (https://www.stat.berkeley.edu/~breiman/RandomForests/cc_home.htm).
+
 ### ROC curve 
 ```python 
 # roc curve and auc
