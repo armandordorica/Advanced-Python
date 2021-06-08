@@ -184,6 +184,24 @@ plt.ylabel("F1 score")
 ```
 ![](https://github.com/armandordorica/Advanced-Python/blob/master/images/2_optimal_threshold.png?raw=true)
 
+### Bar Plot with Multiple Axis 
+```
+sns.set_style('white')
+fig, ax1 = plt.subplots(figsize=(20,10))
+ax1.bar(merchant_names_hist_filtered.index, merchant_names_hist_filtered.bk_scanID)
+
+ax1.set_ylabel('Number of Scans')
+ax1.set_title("Number of Scans by Merchant as of {}".format(date), fontsize=20)
+
+ax2 = ax1.twinx()
+
+ax2.bar(merchant_names_hist_filtered.index, merchant_names_hist_filtered['% of total scans'])
+
+ax2.set_ylabel('% of Total apps')
+ax1.set_xticklabels(merchant_names_hist_filtered.index, rotation = 90)
+```
+
+
 
 ### Comparison Bar Plot 
 ```
