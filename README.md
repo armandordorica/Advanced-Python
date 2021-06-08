@@ -201,7 +201,7 @@ ax2.set_ylabel('% of Total apps')
 ax1.set_xticklabels(merchant_names_hist_filtered.index, rotation = 90)
 ```
 
-
+![](https://github.com/armandordorica/Advanced-Python/blob/master/images/bar_plot_two_axes.png?raw=true)
 
 ### Comparison Bar Plot 
 ```
