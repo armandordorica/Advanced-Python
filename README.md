@@ -712,6 +712,14 @@ node2.next = node3 # 99->37
 
 ### Useful Functions 
 
+**Equivalent to `row_number` on pandas**
+Counts the sequence every time it sees a new value. 
+
+```
+df.groupby((df['col_name'] != df['col_name'].shift(1)).cumsum()).cumcount()+1
+```
+
+
 **Truth Table**
 ```
 import itertools
