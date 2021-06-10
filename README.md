@@ -811,3 +811,4 @@ https://confluence.int.jumio.com/display/OCR/Onboarding+to+the+new+Prod+ML+envir
 Once you get through this let me know and I can demo the way I use it within my work. (Send me an invite in calendar.) (e
 ```
 * Mariano - BI Data Analyst who can help with tables and Tableau. 
+* Vinay - Product Manager who can help with test accounts. 
