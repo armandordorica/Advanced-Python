@@ -795,3 +795,19 @@ def dot_product(x,y):
 ```
 
 
+
+### Handy People at Jumio 
+* Ronald Streicher - Product Manager that can help with how back office agents handle transactions.
+* Roman Sedlecky - Developer that works on the software used by the Back Office agents. 
+* Tomasz Szydzik - Machine Learning Engineer who can help with Amazon Sagemaker. 
+ ```
+ Hey man, in order to get started you'd need to:
+clone this repo: https://bitbucket.int.jumio.com/projects/AIML/repos/sandbox-mono/browse
+ follow these guides:
+https://confluence.int.jumio.com/display/OCR/How+to+create+Sandbox+user+accounts+with+YubiKey+activation
+https://confluence.int.jumio.com/display/OCR/How+to+use+the+sandbox+--+v2
+https://confluence.int.jumio.com/display/OCR/Onboarding+to+the+new+Prod+ML+environment
+
+Once you get through this let me know and I can demo the way I use it within my work. (Send me an invite in calendar.) (e
+```
+* Mariano - BI Data Analyst who can help with tables and Tableau. 
