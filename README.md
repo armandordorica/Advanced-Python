@@ -795,11 +795,21 @@ def dot_product(x,y):
 ```
 
 
-
 ### Handy People at Jumio 
 * Ronald Streicher - Product Manager that can help with how back office agents handle transactions.
 * Roman Sedlecky - Developer that works on the software used by the Back Office agents. 
 * Tomasz Szydzik - Machine Learning Engineer who can help with Amazon Sagemaker. 
+* Bill Inglebright - InfoSec guy who can help getting access to PII data
+* Christian Schwaiger -  InfoSec guy who can help getting access to PII data (Bill seems more helpful though)
+* Mark Burrett - Lead Web - See which events get triggered from a PII standpoint
+* Lucas Danzer - Lead Mobile - See which events get triggered from a PII standpoint
+* Lei Guang - Lead Data Scientist (AML workflow)
+* Linda Liu - BI Analyst
+* Mariano - BI Analyst
+* Ahmed Shaaban - BI Analyst 
+* Dorota Koseta - Legal Counsel (talk to her regarding legal implications of PII data usage) 
+* Joerg Alpers - PO of Fraud Squad 
+* Sujai Xavier - Scrum master
  ```
  Hey man, in order to get started you'd need to:
 clone this repo: https://bitbucket.int.jumio.com/projects/AIML/repos/sandbox-mono/browse
