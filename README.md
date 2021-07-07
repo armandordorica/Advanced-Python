@@ -822,3 +822,6 @@ Once you get through this let me know and I can demo the way I use it within my 
 ```
 * Mariano - BI Data Analyst who can help with tables and Tableau. 
 * Vinay - Product Manager who can help with test accounts. 
+* Vishnu - MLDI help with Sandbox. 
+* Thomas Krump - Architecture Development Infrastructure, events data. https://docs.google.com/presentation/d/16JYl9YRNu3Bw69SfMCz05TDHDvMueA__bIDADefI5RU/edit#slide=id.p
+* 
