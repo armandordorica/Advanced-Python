@@ -827,3 +827,16 @@ Once you get through this let me know and I can demo the way I use it within my 
  * https://jenkins-qa.int.jumio.com/job/user_create_new/build?delay=0sec 
  * He'll send a link to a web app that we can use to play around with IDs and see what events they generate. 
 * 
+
+
+
+### Leave only last commit on Git
+```
+rm -rf .git
+git init
+
+git add *.ipynb
+git commit -m "removed history"
+git remote add origin ssh://git@bitbucket.int.jumio.com:7999/aiml/coinlist_analysis.git
+git push -u --force origin master
+```
