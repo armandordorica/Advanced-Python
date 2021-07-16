@@ -840,3 +840,8 @@ git commit -m "removed history"
 git remote add origin ssh://git@bitbucket.int.jumio.com:7999/aiml/coinlist_analysis.git
 git push -u --force origin master
 ```
+
+### Show hidden file like `.bash_profile` or `.bashrc`. 
+```
+ls -a
+```
