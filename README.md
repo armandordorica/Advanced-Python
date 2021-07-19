@@ -872,4 +872,6 @@ $ chmod 700 ~/.bash_profile
 $ chmod 700 ~/.bashrc
 ```
 
+### Adding a new SSH key to your github account
+https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account
 
