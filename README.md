@@ -712,6 +712,11 @@ node2.next = node3 # 99->37
 
 ### Useful Functions 
 
+**Show all columns on Pandas**
+```python
+pd.set_option('display.max_columns', None)
+```
+
 **Equivalent to `row_number` on pandas**
 Counts the sequence every time it sees a new value. 
 
