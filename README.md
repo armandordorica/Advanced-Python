@@ -724,6 +724,10 @@ Counts the sequence every time it sees a new value.
 df.groupby((df['col_name'] != df['col_name'].shift(1)).cumsum()).cumcount()+1
 ```
 
+```python
+df['rank_num'] = df.groupby('scan_reference')['date'].rank(method='first')
+```
+
 ### Group by `grouping_var` having count > `threshold`
 ```python
 def groupby_having_count(df, grouping_var, threshold=1): 
