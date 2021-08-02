@@ -724,7 +724,14 @@ Counts the sequence every time it sees a new value.
 df.groupby((df['col_name'] != df['col_name'].shift(1)).cumsum()).cumcount()+1
 ```
 
-
+### Group by `grouping_var` having count > `threshold`
+```python
+def groupby_having_count(df, grouping_var, threshold=1): 
+    g = df.groupby(grouping_var) 
+    return g.filter(lambda x: len(x) > threshold)
+```
+    
+    
 **Truth Table**
 ```
 import itertools
