@@ -712,6 +712,16 @@ node2.next = node3 # 99->37
 
 ### Useful Functions 
 
+**Generate list of dates** 
+```python
+min_date = dates['min_date'].astype(str).iloc[0]
+max_date = dates['max_date'].astype(str).iloc[0]
+min_date, max_date
+
+dates_list = [d.strftime('%Y-%m-%d') for d in pd.date_range(min_date,max_date)]
+dates_list
+```
+
 **Show all columns on Pandas**
 ```python
 pd.set_option('display.max_columns', None)
