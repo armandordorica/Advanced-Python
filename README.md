@@ -727,6 +727,11 @@ dates_list
 pd.set_option('display.max_columns', None)
 ```
 
+**Find common elements in two lists with numpy**
+```
+common_elements = np.intersect1d(list_A, list_B)
+```
+
 **Equivalent to `row_number` on pandas**
 Counts the sequence every time it sees a new value. 
 
