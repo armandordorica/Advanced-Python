@@ -732,6 +732,13 @@ pd.set_option('display.max_columns', None)
 common_elements = np.intersect1d(list_A, list_B)
 ```
 
+
+**Filter out for elements in list that satisfy a condition (numpy)**
+```
+myarray[myarray < threshold]
+```
+
+
 **Equivalent to `row_number` on pandas**
 Counts the sequence every time it sees a new value. 
 
