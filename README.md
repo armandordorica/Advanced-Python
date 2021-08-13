@@ -1,3 +1,19 @@
+# Anatomy of a README 
+* Description
+* Installation
+* Usage
+
+
+* What steps are need to be taken to get the code up and running? 
+* What should the user have installed or configured? 
+* What might they have a hard time understanding right away?
+
+
+Tool to preview a markdown file: 
+`https://dillinger.io/`.
+
+<hr>
+
 # A/B Testing 
 https://colab.research.google.com/drive/1hE_e6iXJImfqpI4M8WmJDRYMiI2oJJbX?usp=sharing
 
