@@ -864,6 +864,9 @@ def dot_product(x,y):
 * Dorota Koseta - Legal Counsel (talk to her regarding legal implications of PII data usage) 
 * Joerg Alpers - PO of Fraud Squad 
 * Sujai Xavier - Scrum master
+* Mohan Kenchappa Lakshmipati - Sr. Python Engineer in MLDI working on the BI migration. He can help with migrating historical data. Alix told him tat we need a plan to have the birthday cake in October and start really pushing a smarter routing to reach decent FAR (False Acceptance Rate) and automation rate in November. 
+
+
  ```
  Hey man, in order to get started you'd need to:
 clone this repo: https://bitbucket.int.jumio.com/projects/AIML/repos/sandbox-mono/browse
