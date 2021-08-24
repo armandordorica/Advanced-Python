@@ -12,6 +12,10 @@
 Tool to preview a markdown file: 
 `https://dillinger.io/`.
 
+
+### Google Style Python DocStrings 
+https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
+
 <hr>
 
 # A/B Testing 
