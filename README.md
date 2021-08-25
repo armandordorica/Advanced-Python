@@ -18,6 +18,85 @@ https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
 
 <hr>
 
+### Making a Python Package
+A *Python module* is just a Python file containing code. 
+A package is essentially a collection of modules placed into a directory. 
+A Python package also needs an `__init__.py` file. This file is telling Python that this folder contains a package. 
+* A package always needs to have an `init` file even if the file is completely empty. The code inside the `init` file gets run whenever you import a package inside a Python program. 
+* There should be a `setup.py` file at the same level as the core folder, i.e. `distributions`. This file is necessary for `pip` installing. `pip` will automatically look for this file.
+    * This file will contain information of metadata about the package like the package name, version, description, etcetera. 
+ 
+It will look something like this: 
+
+`setup.py`
+
+```python 
+from setuptools import setup
+
+setup(name='distributions', 
+      versions='0.1',
+      description='Gaussian distributions', 
+      packages=['distributions'], 
+      zip_safe=False)
+```
+
+
+
+### Magic Methods
+* Magic methods let you overwrite and customize default Python behaviour. For example, the init method lets you customize how Python instantiates an object. 
+* The `_add_` method overwrites the behaviour of the `+` sign.  
+ * Example use case: Imagine you create a `Gauss` class where you are able to define a Gaussian function based on the mean and variance. You want to be able to change the behaviour of the `+` sign such that when you add two Gaussians you get a Gaussian back. 
+* The `__repr__` method is what says what is printed when a single variable is on a cell on a Jupyter Notebook. 
+ * You can redefine this method so that it overwrites the Python default. 
+
+
+### Inheritance 
+
+* `Shirt` and `Pants` object inherit from the `Clothing` class. This tells Python that they will inherit all of the attributes and functions from the Clothing class. 
+* `Clothing.__init__(self, color, size, style, price)` --> this means that the `Shirt` object initializes itself using the Clothing's init method. Then you can add extra attributes like the `long_or_short` attribute in the `Shirt` class or `waist` in the `Pants` class. 
+* You can also extend the `Shirt` or `Pants` class by adding more methods. To give an example, I could add a `double_price()` method just to the `Shirt` class. 
+* You can also overwrite any of the `Clothing` methods. For example, the Pants class is overwriting the `calculate_discount()` method. 
+* One of the main benefits of inheritance is that you can add atributes and methods to the `Clothing` class, and then both the `Shirt` and `Pants` class will have those attributes and methods as well. 
+
+
+```python 
+class Clothing: 
+    def __init__(self, color, size, style, price): 
+        self.color = color
+        self.size = size
+        self.style = style
+        self.price = price 
+        
+    def change_price(self, price): 
+        self.price = price 
+        
+    def calculate_discount(self, discount): 
+        return self.price * (1 - discount) 
+```
+
+
+
+```python 
+
+class Shirt(Clothing): 
+    def __init__(self, color, size, style, price, long_or_short): 
+        Clothing.__init__(self, color, size, style, price) 
+        self.long_or_short = long_or_short 
+        
+    def double_price(self): 
+        self.price = 2*self.price 
+        
+class Pants(Clothing): 
+    def __init__(self, color, size, style, price, waist): 
+        Clothing.__init__(self, color, size, stype, price)
+        self.waist = waist
+        
+    def calculate_discount(self, discount): 
+        return self.price * (1- discount/2)
+```
+ 
+     
+
 # A/B Testing 
 https://colab.research.google.com/drive/1hE_e6iXJImfqpI4M8WmJDRYMiI2oJJbX?usp=sharing
 
