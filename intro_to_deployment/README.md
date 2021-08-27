@@ -69,6 +69,12 @@ Th model and the application require a computing environment so that they can be
 * The structure of a **Docker container** enables to create, save, use and delete a set of common tools. 
 
 
+### Docker Containers 
+* A container script file is used to create a container.
+* This text script file can easily be shared with others and provides a simple method to replicate a particular container.
+* This container script is simply the instructions (algorithm) that is used to create a container; for Docker these container scripts are referred to as dockerfiles.
+* Container script files can be stored in repositories, which provide a simple means to share and replicate containers
+
 **Container Structure**
 * Computational infrastructure - cloud, on-prem server, local computer. 
 * Operating System
@@ -80,6 +86,7 @@ Th model and the application require a computing environment so that they can be
 * Only software to run the application is required --> More efficient use of resources and faster application deployment.
 * Makes application creation, replication, deletion, and maintenance easier and consistent across applications that are deployed using containers. 
 * Simpler and more secure way to replicate, save, and share containers. 
+
 
 * What's the machine learning workflow?
 
@@ -118,3 +125,40 @@ Technologies like containers, endpoints, and APIs (Application Programming Inter
 
 ### DevOps Diagram 
 ![](https://github.com/armandordorica/Advanced-Python/blob/master/devOps_diagram.png?raw=true)
+
+
+### Deploying a Model with SageMaker 
+![](https://github.com/armandordorica/Advanced-Python/blob/master/intro_to_deployment/intro_to_deployment:endpoints.png?raw=true)
+
+An endpoint, in this case, is a URL that allows an application and a model to speak to one another.
+* You can start an endpoint by calling `.deploy()` on an estimator and passing in some information about the instance.
+
+```
+xgb_predictor = xgb.deploy(initial_instance_count = 1, instance_type = 'ml.m4.xlarge')
+```
+
+* Then, you need to tell your endpoint, what type of data it expects to see as input (like .csv).
+```
+from sagemaker.predictor import csv_serializer
+
+xgb_predictor.content_type = 'text/csv'
+xgb_predictor.serializer = csv_serializer
+```
+
+* Then, perform inference; you can pass some data as the "Body" of a message, to an endpoint and get a response back. 
+```
+response = runtime.invoke_endpoint(EndpointName = xgb_predictor.endpoint,   # The name of the endpoint we created
+                                       ContentType = 'text/csv',                     # The data format that is expected
+                                       Body = ','.join([str(val) for val in test_bow]).encode('utf-8'))
+```
+* The inference data is stored in the "Body" of the response, and can be retrieved:
+```
+response = response['Body'].read().decode('utf-8')
+print(response)
+```
+
+* Finally, do not forget to shut down your endpoint when you are done using it.
+```
+xgb_predictor.delete_endpoint()
+```
+
