@@ -96,3 +96,22 @@ Th model and the application require a computing environment so that they can be
 * What are the essential characteristics associated with the code of deployed models?
 
 * What are different cloud computing platforms we might use to deploy our machine learning models?
+
+
+
+### Paths to Deployment 
+**Paths to Deployment:**
+1. Python model is recoded into the programming language of the production environment.
+   * The first method which involves recoding the Python model into the language of the production environment, often Java or C++. This method is rarely used anymore because it takes time to recode, test, and validate the model that provides the same predictions as the original.
+2. Model is coded in Predictive Model Markup Language (PMML) or Portable Format Analytics (PFA).
+   * The second method is to code the model in Predictive Model Markup Language (PMML) or Portable Format for Analytics (PFA), which are two complementary standards that simplify moving predictive models to deployment into a production environment. The Data Mining Group developed both PMML and PFA to provide vendor-neutral executable model specifications for certain predictive models used by data mining and machine learning. Certain analytic software allows for the direct import of PMML including but not limited to IBM SPSS, R, SAS Base & Enterprise Miner, Apache Spark, Teradata Warehouse Miner, and TIBCO Spotfire.
+
+
+3. Python model is converted into a format that can be used in the production environment.
+
+* The third method is to **build a Python model and use libraries and methods that convert the model into code that can be used in the production environment**. Specifically most popular machine learning software frameworks, like PyTorch, TensorFlow, SciKit-Learn, have methods that will convert Python models into intermediate standard format, like ONNX (Open Neural Network Exchange format). This intermediate standard format then can be converted into the software native to the production environment.
+
+This is the easiest and fastest way to move a Python model from modeling directly to deployment.
+Moving forward this is typically the way models are moved into the production environment.
+Technologies like containers, endpoints, and APIs (Application Programming Interfaces) also help ease the work required for deploying a model into the production environment.
+
