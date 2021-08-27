@@ -115,3 +115,6 @@ This is the easiest and fastest way to move a Python model from modeling directl
 Moving forward this is typically the way models are moved into the production environment.
 Technologies like containers, endpoints, and APIs (Application Programming Interfaces) also help ease the work required for deploying a model into the production environment.
 
+
+### DevOps Diagram 
+![](https://github.com/armandordorica/Advanced-Python/blob/master/devOps_diagram.png?raw=true)
